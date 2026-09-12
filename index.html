@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>احسان شاپ | فروشگاه اینترنتی</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: Tahoma, sans-serif; background: #F4F6F9; color: #1a1a1a; line-height: 1.8; direction: rtl; }
+a { text-decoration: none; color: inherit; }
+.container { max-width: 1100px; margin: 0 auto; padding: 0 15px; }
+header { background: #1B2A4A; color: #fff; padding: 15px 0; position: sticky; top: 0; z-index: 100; }
+.header-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; }
+.logo { font-size: 1.5rem; font-weight: bold; color: #fff; }
+.logo span { color: #8A94A6; }
+.menu { display: flex; gap: 20px; flex-wrap: wrap; }
+.menu a { color: #c9d1e0; font-size: 0.95rem; }
+.menu a:hover { color: #fff; }
+.hero { background: linear-gradient(135deg, #1B2A4A, #131f38); color: #fff; padding: 60px 0; text-align: center; }
+.hero h1 { font-size: 2.2rem; margin-bottom: 15px; line-height: 1.4; }
+.hero p { color: #c9d1e0; margin-bottom: 25px; }
+.btn { display: inline-block; background: #fff; color: #1B2A4A; padding: 12px 30px; border-radius: 10px; font-weight: bold; transition: 0.3s; }
+.btn:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
+.section { padding: 50px 0; }
+.section-title { text-align: center; font-size: 1.6rem; color: #1B2A4A; margin-bottom: 30px; }
+.categories { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 15px; }
+.cat { background: #fff; padding: 25px 15px; text-align: center; border-radius: 12px; border: 1px solid #eef1f6; transition: 0.3s; cursor: pointer; }
+.cat:hover { transform: translateY(-5px); border-color: #1B2A4A; box-shadow: 0 10px 25px rgba(27,42,74,0.1); }
+.cat-icon { font-size: 2rem; margin-bottom: 10px; }
+.cat-name { font-weight: bold; color: #1B2A4A; }
+.products { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+.product { background: #fff; border-radius: 12px; overflow: hidden; border: 1px solid #eef1f6; transition: 0.3s; }
+.product:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(27,42,74,0.1); }
+.product-img { height: 180px; background: linear-gradient(135deg, #1B2A4A, #8A94A6); display: flex; align-items: center; justify-content: center; font-size: 3rem; }
+.product-info { padding: 15px; }
+.product-info h3 { font-size: 1rem; margin-bottom: 8px; color: #1B2A4A; }
+.price { color: #8A94A6; font-weight: bold; font-size: 0.9rem; margin-bottom: 12px; }
+.buy-btn { width: 100%; background: #1B2A4A; color: #fff; border: none; padding: 10px; border-radius: 8px; cursor: pointer; font-family: inherit; font-size: 0.9rem; transition: 0.3s; }
+.buy-btn:hover { background: #131f38; }
+.features { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; background: #fff; padding: 30px; border-radius: 12px; }
+.feature { text-align: center; }
+.feature-icon { font-size: 2rem; margin-bottom: 10px; }
+.feature h4 { color: #1B2A4A; margin-bottom: 5px; }
+.feature p { color: #8A94A6; font-size: 0.85rem; }
+footer { background: #1B2A4A; color: #c9d1e0; text-align: center; padding: 25px 15px; margin-top: 40px; }
+@media (max-width: 600px) { .hero h1 { font-size: 1.6rem; } .logo { font-size: 1.2rem; } .menu { gap: 12px; } }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container header-inner">
+    <div class="logo">احسان<span>شاپ</span></div>
+    <nav class="menu">
+      <a href="index.html">خانه</a>
+      <a href="shop.html">فروشگاه</a>
+      <a href="cart.html">سبد خرید</a>
+      <a href="contact.html">تماس</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <h1>به احسان شاپ خوش آمدید</h1>
+    <p>بهترین محصولات با کیفیت بالا و قیمت مناسب</p>
+    <a href="shop.html" class="btn">مشاهده فروشگاه</a>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">دسته‌بندی محصولات</h2>
+    <div class="categories">
+      <a href="shop.html" class="cat"><div class="cat-icon">📱</div><div class="cat-name">موبایل</div></a>
+      <a href="shop.html" class="cat"><div class="cat-icon">💻</div><div class="cat-name">لپ‌تاپ</div></a>
+      <a href="shop.html" class="cat"><div class="cat-icon">🎧</div><div class="cat-name">هدفون</div></a>
+      <a href="shop.html" class="cat"><div class="cat-icon">⌚</div><div class="cat-name">ساعت</div></a>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background:#fff;">
+  <div class="container">
+    <h2 class="section-title">محصولات ویژه</h2>
+    <div class="products">
+      <div class="product">
+        <div class="product-img">🎧</div>
+        <div class="product-info">
+          <h3><a href="product.html" style="color:inherit;">هدفون بی‌سیم پرو</a></h3>
+          <p class="price">۲,۵۰۰,۰۰۰ تومان</p>
+          <button class="buy-btn">افزودن به سبد</button>
+        </div>
+      </div>
+      <div class="product">
+        <div class="product-img">⌚</div>
+        <div class="product-info">
+          <h3><a href="product.html" style="color:inherit;">ساعت هوشمند سری ۷</a></h3>
+          <p class="price">۴,۲۰۰,۰۰۰ تومان</p>
+          <button class="buy-btn">افزودن به سبد</button>
+        </div>
+      </div>
+      <div class="product">
+        <div class="product-img">🔊</div>
+        <div class="product-info">
+          <h3><a href="product.html" style="color:inherit;">اسپیکر بلوتوثی</a></h3>
+          <p class="price">۱,۸۰۰,۰۰۰ تومان</p>
+          <button class="buy-btn">افزودن به سبد</button>
+        </div>
+      </div>
+      <div class="product">
+        <div class="product-img">🔋</div>
+        <div class="product-info">
+          <h3><a href="product.html" style="color:inherit;">پاوربانک ۲۰۰۰۰</a></h3>
+          <p class="price">۹۵۰,۰۰۰ تومان</p>
+          <button class="buy-btn">افزودن به سبد</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="features">
+      <div class="feature"><div class="feature-icon">🚚</div><h4>ارسال سریع</h4><p>به سراسر کشور</p></div>
+      <div class="feature"><div class="feature-icon">🛡️</div><h4>ضمانت اصالت</h4><p>تضمین کیفیت</p></div>
+      <div class="feature"><div class="feature-icon">↩️</div><h4>بازگشت کالا</h4><p>تا ۷ روز</p></div>
+      <div class="feature"><div class="feature-icon">☎️</div><h4>پشتیبانی ۲۴/۷</h4><p>همیشه در کنار شما</p></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>© ۱۴۰۳ احسان شاپ - تمامی حقوق محفوظ است.</p>
+  </div>
+</footer>
+
+</body>
+</html>
