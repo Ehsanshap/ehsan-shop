@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>فروشگاه | احسان شاپ</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: Tahoma, sans-serif; background: #F4F6F9; color: #1a1a1a; line-height: 1.8; direction: rtl; }
+a { text-decoration: none; color: inherit; }
+.container { max-width: 1100px; margin: 0 auto; padding: 0 15px; }
+
+header { background: #1B2A4A; color: #fff; padding: 15px 0; position: sticky; top: 0; z-index: 100; }
+.header-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; }
+.logo { font-size: 1.5rem; font-weight: bold; color: #fff; }
+.logo span { color: #8A94A6; }
+.menu { display: flex; gap: 20px; flex-wrap: wrap; }
+.menu a { color: #c9d1e0; font-size: 0.95rem; transition: 0.3s; }
+.menu a:hover { color: #fff; }
+.menu a.active { color: #fff; font-weight: bold; }
+
+.page-header { background: linear-gradient(135deg, #1B2A4A, #131f38); color: #fff; padding: 40px 0; text-align: center; }
+.page-header h1 { font-size: 1.8rem; margin-bottom: 8px; }
+.breadcrumb { font-size: 0.85rem; color: #c9d1e0; }
+.breadcrumb a { color: #8A94A6; }
+
+.shop-wrap { padding: 30px 0; display: grid; grid-template-columns: 220px 1fr; gap: 20px; align-items: start; }
+
+.sidebar { background: #fff; border-radius: 12px; padding: 20px; border: 1px solid #eef1f6; }
+.sidebar h3 { font-size: 1rem; color: #1B2A4A; margin-bottom: 15px; padding-bottom: 10px; border-bottom: 2px solid #F4F6F9; }
+.filter-list { list-style: none; }
+.filter-list li { margin-bottom: 10px; }
+.filter-list label { display: flex; align-items: center; gap: 8px; cursor: pointer; font-size: 0.9rem; color: #333; }
+.filter-list label:hover { color: #1B2A4A; }
+.filter-list input[type="radio"] { accent-color: #1B2A4A; cursor: pointer; }
+
+.toolbar { background: #fff; border-radius: 12px; padding: 15px 20px; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; border: 1px solid #eef1f6; }
+.toolbar p { font-size: 0.9rem; color: #666; }
+.toolbar strong { color: #1B2A4A; }
+.toolbar select { padding: 8px 12px; border: 1px solid #eef1f6; border-radius: 8px; font-family: inherit; font-size: 0.85rem; background: #F4F6F9; cursor: pointer; }
+
+.products { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 15px; }
+.product { background: #fff; border-radius: 12px; overflow: hidden; border: 1px solid #eef1f6; transition: 0.3s; }
+.product:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(27,42,74,0.1); }
+.product-img { height: 150px; background: linear-gradient(135deg, #1B2A4A, #8A94A6); display: flex; align-items: center; justify-content: center; font-size: 2.8rem; position: relative; }
+.badge { position: absolute; top: 10px; right: 10px; background: #8A94A6; color: #fff; font-size: 0.7rem; padding: 3px 10px; border-radius: 20px; }
+.badge.red { background: #e63946; }
+.product-info { padding: 12px; }
+.product-info h3 { font-size: 0.95rem; margin-bottom: 6px; color: #1B2A4A; }
+.product-info h3 a { color: inherit; }
+.price { color: #8A94A6; font-weight: bold; font-size: 0.85rem; margin-bottom: 10px; }
+.buy-btn { width: 100%; background: #1B2A4A; color: #fff; border: none; padding: 8px; border-radius: 8px; font-family: inherit; font-size: 0.85rem; cursor: pointer; transition: 0.3s; }
+.buy-btn:hover { background: #131f38; }
+
+footer { background: #1B2A4A; color: #c9d1e0; text-align: center; padding: 25px 15px; margin-top: 40px; }
+footer p { font-size: 0.9rem; }
+
+@media (max-width: 700px) {
+  .shop-wrap { grid-template-columns: 1fr; }
+  .page-header h1 { font-size: 1.4rem; }
+  .logo { font-size: 1.2rem; }
+  .menu { gap: 12px; }
+  .menu a { font-size: 0.85rem; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container header-inner">
+    <div class="logo">احسان<span>شاپ</span></div>
+    <nav class="menu">
+      <a href="index.html">خانه</a>
+      <a href="shop.html" class="active">فروشگاه</a>
+      <a href="cart.html">سبد خرید</a>
+      <a href="contact.html">تماس</a>
+    </nav>
+  </div>
+</header>
+
+<section class="page-header">
+  <div class="container">
+    <h1>فروشگاه</h1>
+    <div class="breadcrumb">
+      <a href="index.html">خانه</a> ← فروشگاه
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="shop-wrap">
+
+      <aside class="sidebar">
+        <h3>دسته‌بندی</h3>
+        <ul class="filter-list">
+          <li><label><input type="radio" name="cat" value="all" checked> همه محصولات</label></li>
+          <li><label><input type="radio" name="cat" value="mobile"> موبایل و تبلت</label></li>
+          <li><label><input type="radio" name="cat" value="laptop"> لپ‌تاپ</label></li>
+          <li><label><input type="radio" name="cat" value="audio"> هدفون و صوتی</label></li>
+          <li><label><input type="radio" name="cat" value="watch"> ساعت هوشمند</label></li>
+        </ul>
+      </aside>
+
+      <main>
+        <div class="toolbar">
+          <p>نمایش <strong id="count">۸</strong> محصول</p>
+          <select id="sort">
+            <option value="default">پیش‌فرض</option>
+            <option value="low">ارزان‌ترین</option>
+            <option value="high">گران‌ترین</option>
+          </select>
+        </div>
+
+        <div class="products" id="grid">
+
+          <div class="product" data-cat="audio" data-price="2500000">
+            <div class="product-img">🎧<span class="badge">جدید</span></div>
+            <div class="product-info">
+              <h3><a href="product.html">هدفون بی‌سیم پرو</a></h3>
+              <p class="price">۲,۵۰۰,۰۰۰ تومان</p>
+              <button class="buy-btn">افزودن به سبد</button>
+            </div>
+          </div>
+
+          <div class="product" data-cat="watch" data-price="4200000">
+            <div class="product-img">⌚<span class="badge red">۱۵٪ تخفیف</span></div>
+            <div class="product-info">
+              <h3><a href="product.html">ساعت هوشمند سری ۷</a></h3>
+              <p class="price">۴,۲۰۰,۰۰۰ تومان</p>
+              <button class="buy-btn">افزودن به سبد</button>
+            </div>
+          </div>
+
+          <div class="product" data-cat="audio" data-price="1800000">
+            <div class="product-img">🔊</div>
+            <div class="product-info">
+              <h3><a href="product.html">اسپیکر بلوتوثی</a></h3>
+              <p class="price">۱,۸۰۰,۰۰۰ تومان</p>
+              <button class="buy-btn">افزودن به سبد</button>
+            </div>
+          </div>
+
+          <div class="product" data-cat="mobile" data-price="950000">
+            <div class="product-img">🔋</div>
+            <div class="product-info">
+              <h3><a href="product.html">پاوربانک ۲۰۰۰۰</a></h3>
+              <p class="price">۹۵۰,۰۰۰ تومان</p>
+              <button class="buy-btn">افزودن به سبد</button>
+            </div>
+          </div>
+
+          <div class="product" data-cat="laptop" data-price="35000000">
+            <div class="product-img">💻<span class="badge red">۱۰٪ تخفیف</span></div>
+            <div class="product-info">
+              <h3><a href="product.html">لپ‌تاپ ایسوس</a></h3>
+              <p class="price">۳۵,۰۰۰,۰۰۰ تومان</p>
+              <button class="buy-btn">افزودن به سبد</button>
+            </div>
+          </div>
+
+          <div class="product" data-cat="mobile" data-price="12500000">
+            <div class="product-img">📱<span class="badge">جدید</span></div>
+            <div class="product-info">
+              <h3><a href="product.html">گوشی سامسونگ</a></h3>
+              <p class="price">۱۲,۵۰۰,۰۰۰ تومان</p>
+              <button class="buy-btn">افزودن به سبد</button>
+            </div>
+          </div>
+
+          <div class="product" data-cat="audio" data-price="750000">
+            <div class="product-img">🎵</div>
+            <div class="product-info">
+              <h3><a href="product.html">هندزفری بلوتوثی</a></h3>
+              <p class="price">۷۵۰,۰۰۰ تومان</p>
+              <button class="buy-btn">افزودن به سبد</button>
+            </div>
+          </div>
+
+          <div class="product" data-cat="watch" data-price="2900000">
+            <div class="product-img">⌚</div>
+            <div class="product-info">
+              <h3><a href="product.html">ساعت هوشمند مینی</a></h3>
+              <p class="price">۲,۹۰۰,۰۰۰ تومان</p>
+              <button class="buy-btn">افزودن به سبد</button>
+            </div>
+          </div>
+
+        </div>
+      </main>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>© ۱۴۰۳ احسان شاپ - تمامی حقوق محفوظ است.</p>
+  </div>
+</footer>
+
+<script>
+const radios = document.querySelectorAll('input[name="cat"]');
+const products = document.querySelectorAll('.product');
+const count = document.getElementById('count');
+
+radios.forEach(r => {
+  r.addEventListener('change', () => {
+    const cat = document.querySelector('input[name="cat"]:checked').value;
+    let visible = 0;
+    products.forEach(p => {
+      if (cat === 'all' || p.dataset.cat === cat) {
+        p.style.display = '';
+        visible++;
+      } else {
+        p.style.display = 'none';
+      }
+    });
+    count.textContent = visible.toLocaleString('fa-IR');
+  });
+});
+
+const sort = document.getElementById('sort');
+const grid = document.getElementById('grid');
+
+sort.addEventListener('change', () => {
+  const val = sort.value;
+  const arr = Array.from(products);
+  arr.sort((a, b) => {
+    const pa = Number(a.dataset.price);
+    const pb = Number(b.dataset.price);
+    if (val === 'low') return pa - pb;
+    if (val === 'high') return pb - pa;
+    return 0;
+  });
+  arr.forEach(p => grid.appendChild(p));
+});
+</script>
+
+</body>
+            </html>
