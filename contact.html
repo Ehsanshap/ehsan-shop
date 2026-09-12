@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>تماس با ما | احسان شاپ</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: Tahoma, sans-serif; background: #F4F6F9; color: #1a1a1a; line-height: 1.8; direction: rtl; }
+a { text-decoration: none; color: inherit; }
+.container { max-width: 1100px; margin: 0 auto; padding: 0 15px; }
+
+header { background: #1B2A4A; color: #fff; padding: 15px 0; position: sticky; top: 0; z-index: 100; }
+.header-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; }
+.logo { font-size: 1.5rem; font-weight: bold; color: #fff; }
+.logo span { color: #8A94A6; }
+.menu { display: flex; gap: 20px; flex-wrap: wrap; }
+.menu a { color: #c9d1e0; font-size: 0.95rem; transition: 0.3s; }
+.menu a:hover { color: #fff; }
+.menu a.active { color: #fff; font-weight: bold; }
+
+.page-header { background: linear-gradient(135deg, #1B2A4A, #131f38); color: #fff; padding: 40px 0; text-align: center; }
+.page-header h1 { font-size: 1.8rem; margin-bottom: 8px; }
+.page-header p { color: #c9d1e0; font-size: 0.9rem; }
+
+.contact-wrap { padding: 40px 0; display: grid; grid-template-columns: 1fr 1fr; gap: 25px; align-items: start; }
+
+.form-box { background: #fff; border-radius: 12px; padding: 30px; border: 1px solid #eef1f6; }
+.form-box h2 { font-size: 1.3rem; color: #1B2A4A; margin-bottom: 20px; }
+
+.form-group { margin-bottom: 18px; }
+.form-group label { display: block; font-size: 0.9rem; color: #1B2A4A; margin-bottom: 8px; font-weight: bold; }
+.form-group input, .form-group textarea { width: 100%; padding: 12px 15px; border: 1px solid #eef1f6; border-radius: 10px; font-family: inherit; font-size: 0.9rem; background: #F4F6F9; color: #1a1a1a; outline: none; transition: 0.3s; }
+.form-group input:focus, .form-group textarea:focus { border-color: #1B2A4A; background: #fff; }
+.form-group textarea { resize: vertical; min-height: 120px; }
+
+.submit-btn { width: 100%; background: #1B2A4A; color: #fff; border: none; padding: 14px; border-radius: 10px; font-family: inherit; font-size: 1rem; font-weight: bold; cursor: pointer; transition: 0.3s; }
+.submit-btn:hover { background: #131f38; transform: translateY(-2px); }
+
+.form-msg { margin-top: 15px; padding: 12px; border-radius: 8px; font-size: 0.9rem; text-align: center; display: none; }
+.form-msg.ok { background: #d4f5e0; color: #1a8c4a; display: block; }
+
+.info-box { background: #fff; border-radius: 12px; padding: 30px; border: 1px solid #eef1f6; margin-bottom: 25px; }
+.info-box h2 { font-size: 1.3rem; color: #1B2A4A; margin-bottom: 20px; }
+
+.info-item { display: flex; align-items: flex-start; gap: 15px; padding: 15px 0; border-bottom: 1px solid #F4F6F9; }
+.info-item:last-child { border-bottom: none; }
+.info-icon { width: 45px; height: 45px; background: #F4F6F9; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; flex-shrink: 0; }
+.info-text h4 { font-size: 0.95rem; color: #1B2A4A; margin-bottom: 4px; }
+.info-text p { font-size: 0.85rem; color: #666; }
+
+.socials-box { background: #1B2A4A; border-radius: 12px; padding: 25px; color: #fff; text-align: center; }
+.socials-box h3 { font-size: 1.1rem; margin-bottom: 15px; }
+.socials { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
+.social-btn { width: 55px; height: 55px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; transition: 0.3s; border: 1px solid rgba(255,255,255,0.15); }
+.social-btn:hover { background: #fff; color: #1B2A4A; transform: translateY(-5px); }
+
+.faq-section { padding: 20px 0 50px; }
+.faq-section h2 { text-align: center; font-size: 1.5rem; color: #1B2A4A; margin-bottom: 25px; }
+.faq-item { background: #fff; border-radius: 12px; margin-bottom: 12px; border: 1px solid #eef1f6; overflow: hidden; }
+.faq-q { padding: 18px 20px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: bold; color: #1B2A4A; font-size: 0.95rem; transition: 0.3s; }
+.faq-q:hover { background: #F4F6F9; }
+.faq-q .arrow { font-size: 1.2rem; transition: 0.3s; color: #8A94A6; }
+.faq-item.open .faq-q .arrow { transform: rotate(180deg); }
+.faq-a { max-height: 0; overflow: hidden; transition: 0.3s; padding: 0 20px; color: #666; font-size: 0.88rem; line-height: 1.9; }
+.faq-item.open .faq-a { max-height: 300px; padding: 0 20px 18px; }
+
+footer { background: #1B2A4A; color: #c9d1e0; text-align: center; padding: 25px 15px; }
+footer p { font-size: 0.9rem; }
+
+@media (max-width: 700px) {
+  .contact-wrap { grid-template-columns: 1fr; }
+  .page-header h1 { font-size: 1.4rem; }
+  .form-box, .info-box { padding: 20px; }
+  .logo { font-size: 1.2rem; }
+  .menu { gap: 12px; }
+  .menu a { font-size: 0.85rem; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container header-inner">
+    <div class="logo">احسان<span>شاپ</span></div>
+    <nav class="menu">
+      <a href="index.html">خانه</a>
+      <a href="shop.html">فروشگاه</a>
+      <a href="cart.html">سبد خرید</a>
+      <a href="contact.html" class="active">تماس</a>
+    </nav>
+  </div>
+</header>
+
+<section class="page-header">
+  <div class="container">
+    <h1>📞 تماس با ما</h1>
+    <p>ما همیشه آماده شنیدن نظرات و پیشنهادات شما هستیم</p>
+  </div>
+</section>
+
+<section class="container">
+  <div class="contact-wrap">
+
+    <div class="form-box">
+      <h2>✉️ پیام خود را بفرستید</h2>
+      <form onsubmit="sendMessage(event)">
+        <div class="form-group">
+          <label>نام و نام خانوادگی</label>
+          <input type="text" id="name" placeholder="مثلاً: احسان احمدی" required>
+        </div>
+        <div class="form-group">
+          <label>ایمیل</label>
+          <input type="email" id="email" placeholder="example@email.com" required>
+        </div>
+        <div class="form-group">
+          <label>موضوع</label>
+          <input type="text" id="subject" placeholder="موضوع پیام شما">
+        </div>
+        <div class="form-group">
+          <label>پیام شما</label>
+          <textarea id="message" placeholder="متن پیام خود را اینجا بنویسید..." required></textarea>
+        </div>
+        <button type="submit" class="submit-btn">📤 ارسال پیام</button>
+        <div class="form-msg" id="formMsg"></div>
+      </form>
+    </div>
+
+    <div>
+      <div class="info-box">
+        <h2>📍 اطلاعات تماس</h2>
+
+        <div class="info-item">
+          <div class="info-icon">🏢</div>
+          <div class="info-text">
+            <h4>آدرس</h4>
+            <p>تهران، خیابان ولیعصر، پلاک ۱۲۳، طبقه ۴</p>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <div class="info-icon">📞</div>
+          <div class="info-text">
+            <h4>تلفن</h4>
+            <p>۰۲۱-۱۲۳۴۵۶۷۸</p>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <div class="info-icon">📱</div>
+          <div class="info-text">
+            <h4>موبایل</h4>
+            <p>۰۹۱۲-۳۴۵-۶۷۸۹</p>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <div class="info-icon">✉️</div>
+          <div class="info-text">
+            <h4>ایمیل</h4>
+            <p>info@ehsanshop.ir</p>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <div class="info-icon">🕐</div>
+          <div class="info-text">
+            <h4>ساعات کاری</h4>
+            <p>شنبه تا پنجشنبه: ۹ صبح تا ۹ شب</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="socials-box">
+        <h3>ما را دنبال کنید</h3>
+        <div class="socials">
+          <a href="#" class="social-btn">📷</a>
+          <a href="#" class="social-btn">✈️</a>
+          <a href="#" class="social-btn">💬</a>
+          <a href="#" class="social-btn">▶️</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="container faq-section">
+  <h2>❓ سوالات متداول</h2>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>چطور می‌تونم سفارشم رو پیگیری کنم؟</span>
+      <span class="arrow">▼</span>
+    </div>
+    <div class="faq-a">
+      بعد از ثبت سفارش، یک کد رهگیری برات پیامک میشه که می‌تونی از طریق سایت پست یا تماس با پشتیبانی، وضعیت سفارشت رو پیگیری کنی.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>هزینه ارسال چقدره؟</span>
+      <span class="arrow">▼</span>
+    </div>
+    <div class="faq-a">
+      برای خریدهای بالای ۵۰۰ هزار تومان، ارسال رایگان است. برای سایر سفارش‌ها، هزینه ارسال بر اساس شهر شما محاسبه و در صفحه پرداخت نمایش داده می‌شود.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>آیا امکان بازگشت کالا وجود داره؟</span>
+      <span class="arrow">▼</span>
+    </div>
+    <div class="faq-a">
+      بله! تا ۷ روز پس از دریافت کالا، در صورت سالم بودن بسته‌بندی، می‌تونید کالا رو بازگردونید و مبلغ به حساب شما برگرده.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>گارانتی محصولات چطوریه؟</span>
+      <span class="arrow">▼</span>
+    </div>
+    <div class="faq-a">
+      تمام محصولات احسان شاپ دارای گارانتی اصالت و سلامت فیزیکی هستند. محصولات الکترونیکی بسته به نوع، بین ۶ تا ۱۸ ماه گارانتی دارند.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>روش‌های پرداخت چیه؟</span>
+      <span class="arrow">▼</span>
+    </div>
+    <div class="faq-a">
+      پرداخت آنلاین با تمام کارت‌های عضو شتاب، پرداخت در محل (برای تهران و کرج)، و پرداخت اعتباری با کیف پول امکان‌پذیر است.
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>© ۱۴۰۳ احسان شاپ - تمامی حقوق محفوظ است.</p>
+  </div>
+</footer>
+
+<script>
+function sendMessage(e) {
+  e.preventDefault();
+  const name = document.getElementById('name').value;
+  const msg = document.getElementById('formMsg');
+  msg.textContent = '✅ ' + name + ' عزیز، پیام شما با موفقیت ارسال شد!';
+  msg.className = 'form-msg ok';
+  e.target.reset();
+  setTimeout(() => {
+    msg.style.display = 'none';
+  }, 4000);
+}
+
+function toggleFaq(el) {
+  const item = el.parentElement;
+  item.classList.toggle('open');
+}
+</script>
+
+</body>
+</html>
